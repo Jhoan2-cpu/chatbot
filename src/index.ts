@@ -51,7 +51,8 @@ const corsOptions = {
 // Middleware
 app.use(cors(corsOptions));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../public')));
+// En producción, public está en dist/public
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Inicializar servicios
 const geminiService = new GeminiService(process.env.GEMINI_API_KEY);
@@ -80,7 +81,7 @@ app.get('/health', async (req, res) => {
 
 // Ruta principal - servir HTML
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
+  res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 // Iniciar servidor

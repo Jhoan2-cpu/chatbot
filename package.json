@@ -4,7 +4,8 @@
   "description": "Chatbot educativo especializado en Comunicación para Moodle",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && npm run copy-public",
+    "copy-public": "mkdir -p dist && cp -r public dist/public",
     "start": "node dist/index.js",
     "dev": "nodemon --exec ts-node src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"

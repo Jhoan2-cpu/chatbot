@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot de Comunicación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Header -->
+        <div class="chat-header">
+            <div class="header-content">
+                <span class="bot-icon">🤖</span>
+                <h1>Asistente de Comunicación</h1>
+            </div>
+            <p class="header-subtitle">Tu ayuda 24/7 para el curso</p>
+        </div>
+
+        <!-- Messages Area -->
+        <div class="messages-container" id="messagesContainer">
+            <div class="message bot-message">
+                <div class="message-content">
+                    <p>¡Hola! 👋 Soy tu asistente virtual del curso de Comunicación.</p>
+                    <p>¿En qué puedo ayudarte hoy?</p>
+                </div>
+                <span class="timestamp" id="initialTimestamp"></span>
+            </div>
+        </div>
+
+        <!-- Suggested Questions -->
+        <div class="suggestions-container" id="suggestionsContainer">
+            <p class="suggestions-title">💡 Preguntas Sugeridas:</p>
+            <div class="suggestions-buttons" id="suggestionsButtons"></div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-container">
+            <textarea
+                id="messageInput"
+                placeholder="Escribe tu pregunta..."
+                maxlength="500"
+                rows="1"
+            ></textarea>
+            <button id="sendButton" class="send-button" disabled>
+                <span class="button-text">Enviar</span>
+                <span class="button-icon">📤</span>
+            </button>
+        </div>
+
+        <!-- Character Counter -->
+        <div class="char-counter">
+            <span id="charCount">0</span>/500
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
